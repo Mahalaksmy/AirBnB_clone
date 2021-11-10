@@ -23,8 +23,8 @@ class BaseModel:
 
     def __str__(self):
         """ I do'nt understand """
-        str = '[' + self.name + '] ' + '('
-        # str += self.id + ')'
+        str = '[' + self.__class__.__name__ + '] ' + '('
+        str += self.id + ')'
         # name.__class__.__name__
         return str
 
