@@ -10,19 +10,26 @@ class BaseModel:
     """Magic method or constructor"""
     """def __init__(self, *args, **kwargs):"""
 
-    def __init__(self, name=None, my_number=None):
+    id = str(uuid.uuid4())
+    created_at = datetime.now()
+    updated_at = datetime.now()
+
+    def __init__(self, *args, **kwargs):
         """Inicialization of the attributes"""
-        self.my_number = my_number
-        self.name = name
-        self.updated_at = datetime.now()
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
+        if kwargs is not None:
+            self.id = type(self).id
+            self.created_at = type(self).created_at
+            self.updated_at = type(self).updated_at          
+        # else:
+        #     for key, value in kwargs.items():
+        #         if key == "created_at" or key == "updated_at":
+        #             value = datetime.strptime(kwargs[key], "%Y-%m-%dT%H:%M:%S.%f")
+        #         if key != "__class__":
+        #             setattr(self, key, value)
 
     def __str__(self):
         """This method return a string with the attributes"""
-        stri = '[' + self.__class__.__name__ + '] ' + '('
-        stri += self.id + ') ' + str(self.__dict__)
-        return stri
+        return f"[{self.__class__.__name__ }] ({self.id} {str(self.__dict__)}) "
 
     def save(self):
         """updates the attribute updated_at
