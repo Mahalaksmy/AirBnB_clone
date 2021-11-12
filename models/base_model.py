@@ -3,7 +3,8 @@
 Class main BaseModel
 """
 import uuid
-from datetime import date, time, datetime
+import models
+from datetime import datetime
 
 
 class BaseModel:
@@ -16,25 +17,30 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """Inicialization of the attributes"""
-        if kwargs is not None:
+        if len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key != "__class__":
+                    setattr(self, key, value)
+                if key == "created_at" or key == "updated_at":
+                    value = datetime.strptime(kwargs[key], "%Y-%m-%dT%H:%M:%S.%f")
+            # self.id = str(uuid.uuid4())
+            # self.created_at = datetime.now()
+            # self.updated_at = self.created_at
+        else:
             self.id = type(self).id
             self.created_at = type(self).created_at
-            self.updated_at = type(self).updated_at          
-        # else:
-        #     for key, value in kwargs.items():
-        #         if key == "created_at" or key == "updated_at":
-        #             value = datetime.strptime(kwargs[key], "%Y-%m-%dT%H:%M:%S.%f")
-        #         if key != "__class__":
-        #             setattr(self, key, value)
+            self.updated_at = type(self).updated_at
+            models.storage.new(self)
 
     def __str__(self):
         """This method return a string with the attributes"""
-        return f"[{self.__class__.__name__ }] ({self.id} {str(self.__dict__)}) "
+        return f"[{self.__class__.__name__ }] ({self.id}) {str(self.__dict__)}"
 
     def save(self):
         """updates the attribute updated_at
         with the current datetime"""
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """returns a dictionary containing
