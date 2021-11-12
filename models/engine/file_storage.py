@@ -2,11 +2,11 @@
 """Class FileStorage"""
 import os
 import json
-import models
+from models.base_model import BaseModel
 
 
 class FileStorage():
-    """ Class FileStorage"""
+    """Class FileStorage"""
 
     __file_path = './file.json'
     __objects =  {}
@@ -33,9 +33,6 @@ class FileStorage():
         """ eserializes the JSON file to __objects"""
         if os.path.exists(self.__file_path):
             with open(self.__file_path, "r") as write_file:
-                json.load(write_file)
-            
-            #     save_dic2 = json.load(self.__file_path)
-            # for k, v in save_dic2.items():
-            #     self.__objects[k] = models.BaseModel[**v]
-
+                save_dic = json.load(write_file)
+                for v in save_dic.values():
+                    self.new(eval(v["__class__"])(**v))
