@@ -25,9 +25,8 @@ class FileStorage():
         save_dic = {}
         for k, v in self.__objects.items():
             save_dic[k] = v.to_dict()
-
         with open(self.__file_path, "w") as write_file:
-            json.dump(save_dic, write_file)
+            json.dump(save_dic, write_file, indent=4, sort_keys=True)
 
     def reload(self):
         """ eserializes the JSON file to __objects"""

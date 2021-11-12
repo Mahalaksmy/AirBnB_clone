@@ -11,10 +11,6 @@ class BaseModel:
     """Magic method or constructor"""
     """def __init__(self, *args, **kwargs):"""
 
-    id = str(uuid.uuid4())
-    created_at = datetime.now()
-    updated_at = datetime.now()
-
     def __init__(self, *args, **kwargs):
         """Inicialization of the attributes"""
         if len(kwargs) != 0:
@@ -23,15 +19,11 @@ class BaseModel:
                     continue
                 if key == "created_at" or key == "updated_at":
                     value = datetime.strptime(kwargs[key], "%Y-%m-%dT%H:%M:%S.%f")
-                else:
-                    setattr(self, key, value)
-            # self.id = str(uuid.uuid4())
-            # self.created_at = datetime.now()
-            # self.updated_at = self.created_at
+                setattr(self, key, value)
         else:
-            self.id = type(self).id
-            self.created_at = type(self).created_at
-            self.updated_at = type(self).updated_at
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = self.created_at
             models.storage.new(self)
 
     def __str__(self):
@@ -47,7 +39,7 @@ class BaseModel:
     def to_dict(self):
         """returns a dictionary containing
         all keys/values iniciliced"""
-        dic = self.__dict__
+        dic = self.__dict__.copy()
         dic["__class__"] = self.__class__.__name__
         dic["created_at"] = self.created_at.isoformat()
         dic["updated_at"] = self.updated_at.isoformat()
