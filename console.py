@@ -12,33 +12,33 @@ from models.city import City
 from models.amenity import Amenity
 from models.review import Review
 
-class HBNBCommand(cmd.Cmd):
-    # ---- Creation de class-----
 
-    # ------ Change of the prompt for '(hbnb)'----
+class HBNBCommand(cmd.Cmd):
+    """---- Creation de class-----"""
+
+    """------ Change of the prompt for '(hbnb)'----"""
     prompt = '(hbnb)'
-    lista_clas = ['BaseModel', 'User', 'Place', 'State', 'City', 'Amenity', 'Review']
- 
-    # ------Method 'emptyline'----
+
+    lista_clas = ['BaseModel', 'User', 'Place',
+                  'State', 'City', 'Amenity', 'Review']
+
+    """------Method 'emptyline'----"""
     def emptyline(self):
         pass
-    
-    # ------Method 'quit' and man quit----
-    def do_quit(self,line):
+
+    """------Method 'quit' and man quit----"""
+    def do_quit(self, line):
+        "Exit of the program"
         sys.exit(1)
-    
-    def help_quit(self):
-        print("Syntax: quit")
-        print("--Quit command to exit the program")
-    
-    # ------Method 'EOF'----
-    def do_EOF(self,line):
+
+    """------Method 'EOF'----"""
+    def do_EOF(self, line):
         "Exit ctrl + C"
         return True
 
-    """ Aquí nuevo código """
+    """ ------Method Create New Instance------"""
     def do_create(self, args):
-        """" create Method """
+        """" Method Create New Instance """
 
         if not args:
             print("** class name missing **")
@@ -49,6 +49,7 @@ class HBNBCommand(cmd.Cmd):
             new_clas.save()
             print(new_clas.id)
 
+    """ ------Method Show------"""
     def do_show(self, args):
         """
         Method that show the
@@ -58,7 +59,6 @@ class HBNBCommand(cmd.Cmd):
         dict_obj = storage.all()
         if not args:
             print("** class name missing **")
-        #elif nombre de la clase :   
         elif cls_arg[0] not in self.lista_clas:
             print("** class doesn't exist **")
         elif len(cls_arg) == 1:
@@ -68,6 +68,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             print(dict_obj["{}.{}".format(cls_arg[0], cls_arg[1])])
 
+    """ ------Method Destroy------"""
     def do_destroy(self, args):
         """
         Method that show the
@@ -77,33 +78,32 @@ class HBNBCommand(cmd.Cmd):
         dict_obj = storage.all()
         if not args:
             print("** class name missing **")
-        #elif nombre de la clase :   
         elif cls_arg[0] not in self.lista_clas:
             print("** class doesn't exist **")
         elif len(cls_arg) == 1:
             print("** instance id missing **")
         elif (cls_arg[0] + "." + cls_arg[1]) not in dict_obj:
             print("** no instance found **")
-        
+
         else:
             del dict_obj["{}.{}".format(cls_arg[0], cls_arg[1])]
             storage.save()
 
+    """ ------Method All------"""
     def do_all(self, args):
-        """ methos """
+        """ Method All, priny all instance """
         if not args or (args in self.lista_clas):
-            #dic_all = []
-            for key in storage.all():
-               #dic_all[key] = storage.all()
-               print(storage.all()[key])
-               #print(dic_all)
-            #print(dic_all)
 
+            for key in storage.all():
+                print(storage.all()[key])
         elif args not in self.lista_clas:
             print("** class doesn't exist **")
 
-        """else:
-            print("** class doesn't exist **")"""
+    """ ------Help Commands------"""
+    def help_quit(self):
+        print("Syntax: quit")
+        print("--Quit command to exit the program")
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

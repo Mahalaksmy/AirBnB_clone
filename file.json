@@ -22,5 +22,24 @@
         "my_number": 89,
         "name": "My_First_Model",
         "updated_at": "2021-11-12T20:21:25.303566"
+    },
+    "User.025b3364-248e-4bcd-9324-b2b69b1c7efe": {
+        "__class__": "User",
+        "created_at": "2021-11-12T21:15:53.328916",
+        "email": "airbnb2@mail.com",
+        "first_name": "John",
+        "id": "025b3364-248e-4bcd-9324-b2b69b1c7efe",
+        "password": "root",
+        "updated_at": "2021-11-12T21:15:53.328944"
+    },
+    "User.d862d8c4-28d6-4db0-92e6-374a7dc9e0ae": {
+        "__class__": "User",
+        "created_at": "2021-11-12T21:15:53.327291",
+        "email": "airbnb@mail.com",
+        "first_name": "Betty",
+        "id": "d862d8c4-28d6-4db0-92e6-374a7dc9e0ae",
+        "last_name": "Bar",
+        "password": "root",
+        "updated_at": "2021-11-12T21:15:53.327300"
     }
 }
