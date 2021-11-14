@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """Create of the class HBNBCommand"""
 import cmd
+import collections
+from os import linesep
+from typing import Counter
 import models
 from models.base_model import BaseModel
 from models import storage
@@ -91,7 +94,7 @@ class HBNBCommand(cmd.Cmd):
 
     """ ------Method All------"""
     def do_all(self, args):
-        """ Method All, priny all instance """
+        """ Method All, print all instance """
         if not args or (args in self.lista_clas):
 
             for key in storage.all():
@@ -99,10 +102,16 @@ class HBNBCommand(cmd.Cmd):
         elif args not in self.lista_clas:
             print("** class doesn't exist **")
 
+    def count(self):
+        """ Method count, count ofall instance """
+        print(len(storage.all()))
+
     def do_User(self, arg):
         """Method for print all instance with user """
         if arg == '.all()':
             self.do_all('User')
+        if arg == '.count()':
+            self.count()
 
     """ ------Help Commands------"""
 
