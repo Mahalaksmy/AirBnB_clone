@@ -14,8 +14,8 @@ class BaseModel:
         """Inicialization of the attributes"""
         if len(kwargs) != 0:
             for key, value in kwargs.items():
-                if key != "__class__":
-                    setattr(self, key, value)
+                if key == "__class__":
+                    continue
                 if key == "created_at" or key == "updated_at":
                     value = datetime.strptime(kwargs[key],
                                               "%Y-%m-%dT%H:%M:%S.%f")
