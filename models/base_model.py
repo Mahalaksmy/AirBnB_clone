@@ -9,7 +9,6 @@ from datetime import datetime
 
 class BaseModel:
     """Magic method or constructor"""
-    """def __init__(self, *args, **kwargs):"""
 
     def __init__(self, *args, **kwargs):
         """Inicialization of the attributes"""
@@ -41,7 +40,7 @@ class BaseModel:
         """returns a dictionary containing
         all keys/values iniciliced"""
         dic = self.__dict__.copy()
-        dic["__class__"] = self.__class__.__name__
         dic["created_at"] = self.created_at.isoformat()
         dic["updated_at"] = self.updated_at.isoformat()
+        dic["__class__"] = self.__class__.__name__
         return dic
