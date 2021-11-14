@@ -38,10 +38,15 @@ class Test_clase_m(unittest.TestCase):
 		""" test for class method """
 		self.assertEqual(self.Model.__class__.__name__, "BaseModel")
 
-	def test_dict(self):
-		dic = self.Model.to_dict()
+	def test_dataTime(self):
+		""" Test for data"""
 		self.assertEqual(isinstance(self.Model.created_at, datetime), True)
+		self.assertEqual(isinstance(self.Model.updated_at, datetime), True)
 
+	def test_dict(self):
+		""" Test for dict"""
+		self.assertEqual(type(self.Model.__dict__), dict)
+		
 
 if __name__ == '__main__':
 	unittest.main()
