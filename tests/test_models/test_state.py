@@ -7,7 +7,7 @@ from models.state import State
 import unittest
 
 
-class TestUser(unittest.TestCase):
+class TestState(unittest.TestCase):
 
     def setUp(self):
         """ Test for Setsup an instance of class State """
