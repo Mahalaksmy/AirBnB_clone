@@ -7,13 +7,9 @@ from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    """Class User Init"""
+    """ Create attributes for user """
 
     email = ""
     password = ""
     first_name = ""
     last_name = ""
-
-    def __init__(self, *args, **kwargs):
-        """ initializes """
-        super().__init__(self, *args, **kwargs)
