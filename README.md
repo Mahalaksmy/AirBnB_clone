@@ -1,6 +1,6 @@
 # AirBnB clone - The console
 
-## General Objectives :tw-1f528:
+## General Objectives 
 
 - Create a Python package
 - Create a command interpreter in Python using the cmd module
@@ -13,11 +13,11 @@
 - Use of * kwargs and how to use it
 - To handle named arguments in a function.
 
-# Requirements :tw-270f:
-- Python Scripts :tw-1f40d:
-- Python Unit Tests :tw-1f40d:
+# Requirements 
+- Python Scripts 
+- Python Unit Tests 
 
-# The command interpreter :tw-1f4bb: :tw-1f4be:
+# The command interpreter 
 
 In order to manage the objects of our program, we create an environment where we can use and execute specific commands that will allow us to manage our program in a more efficient way,
 
@@ -36,6 +36,7 @@ In order to manage the objects of our program, we create an environment where we
     ➜  AirBnB_clone git:(main) ✗ 
 
 ##In non-interactive mode:
+
     ➜  AirBnB_clone git:(main) ✗ echo "help" | ./console.py
     (hbnb)
     Documented commands (type help <topic>):
