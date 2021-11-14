@@ -99,6 +99,11 @@ class HBNBCommand(cmd.Cmd):
         elif args not in self.lista_clas:
             print("** class doesn't exist **")
 
+    def do_User(self, arg):
+        """Method for print all instance with user """
+        if arg == '.all()':
+            self.do_all('User')
+
     """ ------Help Commands------"""
 
     def help_quit(self):
@@ -120,6 +125,10 @@ class HBNBCommand(cmd.Cmd):
     def help_all(self):
         """ Help of the command All"""
         print("All command to show all instance\n")
+
+    def help_User(self):
+        """ Help of the command User"""
+        print("User command to print info of the instances\n")
 
 
 if __name__ == '__main__':
