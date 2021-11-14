@@ -38,6 +38,10 @@ class Test_clase_m(unittest.TestCase):
 		""" test for class method """
 		self.assertEqual(self.Model.__class__.__name__, "BaseModel")
 
+	def test_dict(self):
+		dic = self.Model.to_dict()
+		self.assertEqual(isinstance(self.Model.created_at, datetime), True)
+
 
 if __name__ == '__main__':
 	unittest.main()
