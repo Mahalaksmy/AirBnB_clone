@@ -18,6 +18,25 @@ class Test_clase_m(unittest.TestCase):
 		model_id = BaseModel()
 		id = model_id.id
 		self.assertNotEqual(id, self.Model.id)
+	
+	def test_save(self):
+		""" Test fot method save """
+		test_save = BaseModel()
+		update = test_save.updated_at 
+		test_save.save()
+		update2 = test_save.updated_at 
+		self.assertNotEqual(update, update2)
+	
+	def test_name_Number(self):
+		""" Test for name and number """
+		self.Model.name = "The better team"
+		self.Model.my_number = 2001
+		self.assertEqual(self.Model.name, "The better team")
+		self.assertEqual(self.Model.my_number, 2001)
+	
+	def test_class(self):
+		""" test for class method """
+		self.assertEqual(self.Model.__class__.__name__, "BaseModel")
 
 
 if __name__ == '__main__':
