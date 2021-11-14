@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-
+"""Create of the class HBNBCommand"""
 import cmd
-import sys
 import models
 from models.base_model import BaseModel
 from models import storage
@@ -28,12 +27,12 @@ class HBNBCommand(cmd.Cmd):
 
     """------Method 'quit' and man quit----"""
     def do_quit(self, line):
-        "Exit of the program"
-        sys.exit(1)
+        """Exit of the program"""
+        return True
 
     """------Method 'EOF'----"""
     def do_EOF(self, line):
-        "Exit ctrl + C"
+        """Exit ctrl + C"""
         return True
 
     """ ------Method Create New Instance------"""
@@ -100,9 +99,26 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     """ ------Help Commands------"""
+
     def help_quit(self):
-        print("Syntax: quit")
-        print("--Quit command to exit the program")
+        """ Help of the command quit"""
+        print("Quit command to exit the program\n")
+
+    def help_create(self):
+        """ Help of the command create"""
+        print("Create command to create new instances\n")
+
+    def help_show(self):
+        """ Help of the command create"""
+        print("Show command to show info of the instance\n")
+
+    def help_destroy(self):
+        """ Help of the command Destroy"""
+        print("Destroy command to delete a instance\n")
+
+    def help_all(self):
+        """ Help of the command All"""
+        print("All command to show all instance\n")
 
 
 if __name__ == '__main__':
