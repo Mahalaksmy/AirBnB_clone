@@ -28,7 +28,7 @@ class BaseModel:
 
     def __str__(self):
         """This method return a string with the attributes"""
-        return f"[{self.__class__.__name__ }] ({self.id}) {str(self.__dict__)}"
+        return f"[{self.__class__.__name__ }] ({self.id}) {self.__dict__}"
 
     def save(self):
         """updates the attribute updated_at
