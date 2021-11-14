@@ -138,6 +138,27 @@ class HBNBCommand(cmd.Cmd):
     def help_User(self):
         """ Help of the command User"""
         print("User command to print info of the instances\n")
+    
+    def do_update(self, args):
+        """Updates an attributes of an instance"""
+        cls_arg = args.split()
+        dict_obj = storage.all()
+        if not args:
+            print("** class name missing **")
+        elif cls_arg[0] not in self.lista_clas:
+            print("** class doesn't exist **")
+        elif len(cls_arg) == 1:
+            print("** instance id missing **")
+        elif (cls_arg[0] + "." + cls_arg[1]) not in dict_obj:
+            print("** no instance found **")
+        elif len(cls_arg) == 2:
+            print("** attribute name missing **")
+        elif len(cls_arg) == 3:
+            print("** value missing **")
+        elif len(cls_arg) == 4:
+            obj = dict_obj["{}.{}".format(cls_arg[0], cls_arg[1])]
+            obj.__dict__[cls_arg[2]] = cls_arg[3][1:-1]
+            storage.save()
 
 
 if __name__ == '__main__':
