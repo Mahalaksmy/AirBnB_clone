@@ -23,6 +23,7 @@ class HBNBCommand(cmd.Cmd):
 
     """------Method 'emptyline'----"""
     def emptyline(self):
+        """Emptyline"""
         pass
 
     """------Method 'quit' and man quit----"""

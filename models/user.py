@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Class User"""
+"""Class User
+which inherits from
+"""
 
 from models.base_model import BaseModel
 
@@ -11,3 +13,7 @@ class User(BaseModel):
     password = ""
     first_name = ""
     last_name = ""
+
+    def __init__(self):
+        """ initializes """
+        super(User, self).__init__()
