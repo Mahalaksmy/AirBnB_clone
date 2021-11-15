@@ -34,7 +34,6 @@ class Test_FS(unittest.TestCase):
 
     def test_doc_FileStorage_new(self):
         """ Test for new method """
-
         self.assertIsNotNone(self.Fs.new.__doc__)
 
     def test_save(self):
@@ -46,12 +45,16 @@ class Test_FS(unittest.TestCase):
         self.assertIsNotNone(self.Fs.reload.__doc__)
 
     def test_obj(self):
-        """ Test for obj method """
+        """ Test for obj """
         self.assertEqual(dict, type(self.Fs._FileStorage__objects))
+        with self.assertRaises(AttributeError):
+            self.Fs.__objects
 
     def test_path(self):
-        """ Test for path method """
+        """ Test for path """
         self.assertEqual(str, type(self.Fs._FileStorage__file_path))
+        with self.assertRaises(AttributeError):
+            self.Fs.__file_path
 
 if __name__ == '__main__':
     unittest.main()
