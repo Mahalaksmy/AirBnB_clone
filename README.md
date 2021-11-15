@@ -30,10 +30,13 @@
 | [Models](https://github.com/Mahalaksmy/AirBnB_clone/tree/main/models) |Main Class BaseModel and Sub Classes: City, State, Review, User, Amenity, Place. | 
 | [Engine](https://github.com/Mahalaksmy/AirBnB_clone/tree/main/models/engine) | Class FileStorage     | 
 | [Tests](https://github.com/Mahalaksmy/AirBnB_clone/tree/main/tests) | All project tests        | 
+
+---------------
 # The command interpreter 🕹️
 
 In order to manage the objects of our program, we create an environment where we can use and execute specific commands that will allow us to manage our program in a more efficient way,
 
+---------------
 ## Interactive mode: 💻
 
     ➜  AirBnB_clone git:(main) ✗ ./console.py 
@@ -160,9 +163,15 @@ Updates an instance based on the class name and id by adding or updating attribu
 ----------------
 [AUTHORS](http://https://github.com/Mahalaksmy/AirBnB_clone/blob/main/AUTHORS "AUTHORS")
 
-[Carolina Lopera Correa](https://github.com/CarolinaLopera "Carolina Lopera Correa") 
-[Dairo Julian Carlosama](https://github.com/Julian-Carlosama "Dairo Julian Carlosama")
-[Maha Laksmy Amariles](https://github.com/Mahalaksmy "Maha Laksmy Amariles") 
-
+- [Carolina Lopera Correa](https://github.com/CarolinaLopera "Carolina Lopera Correa") 
+- [Dairo Julian Carlosama](https://github.com/Julian-Carlosama "Dairo Julian Carlosama")
+- [Maha Laksmy Amariles](https://github.com/Mahalaksmy "Maha Laksmy Amariles") 
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+
+------------
+
+`<p align="center">
+  <img  src="https://i.giphy.com/media/LMt9638dO8dftAjtco/200.webp" width="100"><img  src="https://i.giphy.com/media/KzJkzjggfGN5Py6nkT/200.webp" width="100"><img src="https://i.giphy.com/media/IdyAQJVN2kVPNUrojM/200.webp" width="100"><br><br>
+</p>`
+```
