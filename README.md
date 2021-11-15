@@ -1,8 +1,10 @@
 # AirBnB clone - The console
+![](https://e7.pngegg.com/pngimages/998/205/png-clipart-airbnb-logo-business-braintree-management-business-text-service.png)
+---------
 
-## General Objectives 
+## General Objectives 🚀
 
-- Create a Python package
+- Create a Python package fda,mfladsl 
 - Create a command interpreter in Python using the cmd module
 - Usage Unit testing and how to implement it in a large project
 - Serialize and deserialize a Class
@@ -12,16 +14,28 @@
 - Use of  * args and how to use it
 - Use of * kwargs and how to use it
 - To handle named arguments in a function.
-
-# Requirements 
+--------
+# Requirements 📑
 - Python Scripts 
 - Python Unit Tests 
+                                
+[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 
-# The command interpreter 
+---------------
+
+# Table of Contents
+
+|Directory | Files | 
+| :------------ |:---------------:|
+| [Models](https://github.com/Mahalaksmy/AirBnB_clone/tree/main/models) |Main Class BaseModel and Sub Classes: City, State, Review, User, Amenity, Place. | 
+| [Engine](https://github.com/Mahalaksmy/AirBnB_clone/tree/main/models/engine) | Class FileStorage     | 
+| [Tests](https://github.com/Mahalaksmy/AirBnB_clone/tree/main/tests) | All project tests        | 
+# The command interpreter 🕹️
 
 In order to manage the objects of our program, we create an environment where we can use and execute specific commands that will allow us to manage our program in a more efficient way,
 
-## Interactive mode:
+## Interactive mode: 💻
+
     ➜  AirBnB_clone git:(main) ✗ ./console.py 
     (hbnb)help
     
@@ -35,7 +49,7 @@ In order to manage the objects of our program, we create an environment where we
     (hbnb)quit
     ➜  AirBnB_clone git:(main) ✗ 
 
-##In non-interactive mode:
+##In non-interactive mode: 🖥️
 
     ➜  AirBnB_clone git:(main) ✗ echo "help" | ./console.py
     (hbnb)
@@ -139,21 +153,16 @@ Syntax : Update
 ------------
 Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file).
 
+-----------------------------------
+# Flowchart
 
-
-```flow
-st=>start: Console
-op=>operation: create
-cond=>condition: Successful Yes or No?
-e=>end: quit
-
-st->op->cond
-cond(yes)->e
-cond(no)->op
-```
-
+![](https://github.com/Mahalaksmy/AirBnB_clone/blob/main/Flowchart.jpg)
+----------------
 [AUTHORS](http://https://github.com/Mahalaksmy/AirBnB_clone/blob/main/AUTHORS "AUTHORS")
 
-Carolina Lopera Correa 
-Dairo Julian Carlosama 
-Maha Laksmy Amariles 
+[Carolina Lopera Correa](https://github.com/CarolinaLopera "Carolina Lopera Correa") 
+[Dairo Julian Carlosama](https://github.com/Julian-Carlosama "Dairo Julian Carlosama")
+[Maha Laksmy Amariles](https://github.com/Mahalaksmy "Maha Laksmy Amariles") 
+
+
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
