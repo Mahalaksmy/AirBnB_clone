@@ -21,6 +21,13 @@ class TestReview(unittest.TestCase):
         del self.review2
         del self.review3
 
+    def test_argmts(self):
+        """ Test for Delete an instance of class city1 """
+        new = Review()
+        self.assertEqual(new.place_id, "")
+        self.assertEqual(new.user_id, "")
+        self.assertEqual(new.text, "")
+        
     def test_str(self):
         """ Test for validate str format in class city1"""
         string = "[{}] ({}) {}".format(self.review1.__class__.__name__,
