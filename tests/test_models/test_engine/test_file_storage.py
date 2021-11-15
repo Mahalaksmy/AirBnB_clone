@@ -13,11 +13,6 @@ class Test_FS(unittest.TestCase):
     """Test for FileStorage """
     Fs = FileStorage()
 
-    def test_basic(self):
-        """Tests for FS Class"""
-        dicti = self.Fs.class_dict
-        self.assertIsInstance(dicti, dict)
-
     def test_doc_FileStorage(self):
         """test doc for class"""
         self.assertIsNotNone(self.Fs.__doc__)
