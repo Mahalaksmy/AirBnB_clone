@@ -10,6 +10,18 @@ class Test_clase_m(unittest.TestCase):
     """ Test for class mode """
     Model = BaseModel()
 
+    def setUp(self):
+        """ Test for Setsup an instance of a BaseModel() """
+        self.BaseModel1 = BaseModel()
+        self.BaseModel2 = BaseModel()
+        self.BaseModel3 = BaseModel()
+
+    def tearDown(self):
+        """ Test for Delete an instance of a BaseModel()"""
+        del self.BaseModel1
+        del self.BaseModel2
+        del self.BaseModel3
+
     def test_none(self):
         """ Test for base if thi os none """
         self.assertIsNone(None, self.Model.__dict__.values())
