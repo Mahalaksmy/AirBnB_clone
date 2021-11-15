@@ -138,7 +138,7 @@ class HBNBCommand(cmd.Cmd):
     def help_User(self):
         """ Help of the command User"""
         print("User command to print info of the instances\n")
-    
+
     def do_update(self, args):
         """Updates an attributes of an instance"""
         cls_arg = args.split()
