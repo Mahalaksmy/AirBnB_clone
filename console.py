@@ -113,6 +113,48 @@ class HBNBCommand(cmd.Cmd):
         if arg == '.count()':
             self.count()
 
+    def do_BaseModel(self, arg):
+        """Method for print all instance with BaseModel"""
+        if arg == '.all()':
+            self.do_all('User')
+        if arg == '.count()':
+            self.count()
+
+    def do_Review(self, arg):
+        """Method for print all instance with review """
+        if arg == '.all()':
+            self.do_all('User')
+        if arg == '.count()':
+            self.count()
+
+    def do_City(self, arg):
+        """Method for print all instance with City """
+        if arg == '.all()':
+            self.do_all('User')
+        if arg == '.count()':
+            self.count()
+
+    def do_State(self, arg):
+        """Method for print all instance with state """
+        if arg == '.all()':
+            self.do_all('User')
+        if arg == '.count()':
+            self.count()
+
+    def do_Place(self, arg):
+        """Method for print all instance with place """
+        if arg == '.all()':
+            self.do_all('User')
+        if arg == '.count()':
+            self.count()
+
+    def do_Amenity(self, arg):
+        """Method for print all instance with state """
+        if arg == '.all()':
+            self.do_all('User')
+        if arg == '.count()':
+            self.count()
+
     """ ------Help Commands------"""
 
     def help_quit(self):
