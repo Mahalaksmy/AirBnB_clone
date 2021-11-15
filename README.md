@@ -1,5 +1,5 @@
 # AirBnB clone - The console
-![](https://e7.pngegg.com/pngimages/998/205/png-clipart-airbnb-logo-business-braintree-management-business-text-service.png)
+![](https://www.pngitem.com/pimgs/m/132-1322127_airbnb-logo-white-png-transparent-png.png)
 ---------
 
 ## General Objectives 🚀
