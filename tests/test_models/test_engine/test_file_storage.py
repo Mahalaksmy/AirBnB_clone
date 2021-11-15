@@ -45,5 +45,13 @@ class Test_FS(unittest.TestCase):
         """ Test for reload method """
         self.assertIsNotNone(self.Fs.reload.__doc__)
 
+    def test_obj(self):
+        """ Test for obj method """
+        self.assertEqual(dict, type(self.Fs._FileStorage__objects))
+
+    def test_path(self):
+        """ Test for path method """
+        self.assertEqual(str, type(self.Fs._FileStorage__file_path))
+
 if __name__ == '__main__':
     unittest.main()
