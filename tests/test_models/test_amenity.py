@@ -21,6 +21,18 @@ class TestState(unittest.TestCase):
         del self.amenity2
         del self.amenity3
 
+    def test_test_argmts(self):
+        """ Test arguments of the class"""
+        new = Amenity(name="Holberton",
+                      first_name="Betty",
+                      last_name="Holberton",
+                      email="airbnb@holbertonschool.com",
+                      password="root",
+                      created_at="2021-11-12T20:21:42.356737",
+                      updated_at="2021-11-12T20:21:42.356737",
+                      id="0e5ad480-ebf5-4bc8-9771-2a0e8daff36d")
+        self.assertEqual(new.name, "Holberton")
+
     def test_str(self):
         """ Test for validate str format"""
         string = "[{}] ({}) {}".format(self.amenity1.__class__.__name__,

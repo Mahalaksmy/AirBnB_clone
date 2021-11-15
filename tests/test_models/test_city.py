@@ -21,6 +21,14 @@ class TestCity(unittest.TestCase):
         del self.city2
         del self.city3
 
+    def test_test_argmts(self):
+        """ Test arguments of the class"""
+        """ tests attributes """
+        self.assertTrue(hasattr(self.city1, "state_id"))
+        self.assertTrue(hasattr(self.city1, "name"))
+        self.assertIsInstance(self.city1.state_id, str)
+        self.assertIsInstance(self.city1.name, str)
+
     def test_str(self):
         """ Test for validate str format in class city1"""
         string = "[{}] ({}) {}".format(self.city1.__class__.__name__,
