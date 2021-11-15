@@ -33,6 +33,11 @@ class TestState(unittest.TestCase):
                       id="0e5ad480-ebf5-4bc8-9771-2a0e8daff36d")
         self.assertEqual(new.name, "Holberton")
 
+    def test_newname(self):
+        """ Test arguments of the new"""
+        new = Amenity()
+        self.assertEqual(new.name, "")
+
     def test_str(self):
         """ Test for validate str format"""
         string = "[{}] ({}) {}".format(self.amenity1.__class__.__name__,
