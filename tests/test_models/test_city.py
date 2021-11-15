@@ -18,8 +18,8 @@ class TestCity(unittest.TestCase):
     def tearDown(self):
         """ Test for Delete an instance of class city1 """
         del self.city1
-        del self.city1
-        del self.city1
+        del self.city2
+        del self.city3
 
     def test_str(self):
         """ Test for validate str format in class city1"""

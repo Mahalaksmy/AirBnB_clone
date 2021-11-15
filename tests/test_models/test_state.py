@@ -30,8 +30,8 @@ class TestState(unittest.TestCase):
 
     def test_equal(self):
         """ Test for validate id between both instances """
-        user2 = State()
-        self.assertNotEqual(self.user1.id, user2.id)
+        state2 = State()
+        self.assertNotEqual(self.state1.id, state2.id)
 
     def test_validatearg(self):
         """ Test to validate argumets save """

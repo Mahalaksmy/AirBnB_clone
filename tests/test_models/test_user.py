@@ -34,13 +34,13 @@ class TestUser(unittest.TestCase):
         string = "[{}] ({}) {}".format(self.user1.__class__.__name__,
                                        self.user1.id,
                                        self.user1.__dict__)
-        self.assertEqual(str(self.u1), string)
+        self.assertEqual(str(self.user1), string)
 
     def test_equal(self):
         """ Test for validate id between both instances """
         user2 = User()
         self.assertNotEqual(self.user1.id, user2.id)
 
-  
+
 if __name__ == '__main__':
     unittest.main()

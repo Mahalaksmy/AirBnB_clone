@@ -23,10 +23,10 @@ class TestPlace(unittest.TestCase):
 
     def test_str(self):
         """ Test for validate str format"""
-        string = "[{}] ({}) {}".format(self.state1.__class__.__name__,
-                                       self.state1.id,
-                                       self.state1.__dict__)
-        self.assertEqual(str(self.state1), string)
+        string = "[{}] ({}) {}".format(self.place1.__class__.__name__,
+                                       self.place1.id,
+                                       self.place1.__dict__)
+        self.assertEqual(str(self.place1), string)
 
     def test_equal(self):
         """ Test for validate id between both instances """
@@ -36,8 +36,8 @@ class TestPlace(unittest.TestCase):
     def test_validatearg(self):
         """ Test to validate argumets save """
         self.place1.name = "Antioquia"
-        self.assertTrue(hasattr(self.state1, "name"))
-        self.assertIsInstance(self.state1.name, str)
+        self.assertTrue(hasattr(self.place1, "name"))
+        self.assertIsInstance(self.place1.name, str)
 
 
 if __name__ == '__main__':
